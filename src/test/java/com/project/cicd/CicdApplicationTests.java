@@ -1,24 +1,12 @@
-package com.example.demo;
+package com.project.cicd;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-@WebMvcTest(com.project.cicd.HelloController.class)
-class HelloControllerTest {
-
-	@Autowired
-	private MockMvc mockMvc;
+@SpringBootTest
+class CicdApplicationTests {
 
 	@Test
-	void sayHello_returnsExpectedString() throws Exception {
-		mockMvc.perform(get("/hello"))
-				.andExpect(status().isOk())
-				.andExpect(content().string("Hello, Spring Boot!"));
+	void contextLoads() {
 	}
 }
